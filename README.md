@@ -26,6 +26,22 @@ Apply stack:
 
 * `kubectl apply -f kafka-producer-deployment.yml`
 
+Get IP for producer service:
+
+* `minikube service kafka-producer-service`
+
+```
+$>
+|-----------|------------------------|-------------|---------------------------|
+| NAMESPACE |          NAME          | TARGET PORT |            URL            |
+|-----------|------------------------|-------------|---------------------------|
+| default   | kafka-producer-service |        8080 | http://192.168.64.2:30003 |
+|-----------|------------------------|-------------|---------------------------|
+🎉  Opening service default/kafka-producer-service in default browser...
+```
+
+If the consumeer project is running, you should get a reply from that microservice `ack`. Otherwise, you'll get a timeout but you can verify in the UI manager service of the kafka manager deployment.
+
 ## License
 
 Copyright © 2021 Tyler Hoersch
